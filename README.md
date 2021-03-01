@@ -17,4 +17,4 @@
 | body        | text   | null: false |
 
 ### Association
-- belongs_to :categories
+- belongs_to :category

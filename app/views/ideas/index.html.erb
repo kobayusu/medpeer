@@ -1,0 +1,24 @@
+<div>
+  <% @ideas.each do |idea| %>
+    <div>
+      <p><%=@categories.name%></p>
+      <span>
+        <%= idea.body %>
+      </span>
+    </div>
+  <% end %>
+      <div class="contents">
+      <div class="first-view">
+        <!-- 『トップ画像』を表示する -->
+      </div>
+      <div class="upper-content">
+        <!-- 『新着情報』を表示する -->
+      </div>
+      <div class="middle-content">
+        <!-- 『スタイリスト紹介』を表示する -->
+      </div>
+      <div class="bottom-content">
+        <!-- 『フォーム』を表示する -->
+      </div>
+    </div>
+</div>
