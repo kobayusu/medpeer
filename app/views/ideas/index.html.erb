@@ -1,7 +1,11 @@
 <div>
   <% @ideas.each do |idea| %>
     <div>
-      <p><%=@categories.name%></p>
+      <%= form_for [@categories], url: ideas_path do |f| %>
+      <%= f.text_field :name %>
+      <%= f.text_field :body  %>
+      <% end %>
+      <p><%=@categories%></p>
       <span>
         <%= idea.body %>
       </span>

@@ -3,30 +3,23 @@ class IdeasController < ApplicationController
     @ideas = Idea.all
     @categories = Category.all
   end
-
   def new
-    @idea = Idea.new
-    @category = Category.new
+    @idea_category = IdeaCategory.new(idea_params)
   end
 
   def create
     binding.pry
-    if category_id = Category.find_by(name: params[:idea][:category_id]).id
-      Idea.create(idea_params.merge(Category_id: category_id))
-      @idea = Idea.new(idea_params)
-      if @idea.valid?
-         @idea.save
-         redirect_to :index
-      else
-         render :new
-      end
+    @idea_category = IdeaCategory.new(idea_params)
+    if @idea_category.valid?
+      @idea_category.save
+      redirect_to action: :index
     else
-
+      render action: :new
     end
   end
 
   private 
   def idea_params
-    params.require(:idea).permit(:body)
+    params.permit(:name, :body)
   end
 end
