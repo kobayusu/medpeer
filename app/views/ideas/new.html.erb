@@ -1,0 +1,10 @@
+<p>登録する</p>
+<div>
+  <div>
+    <%= form_with(model: @idea_category, url: ideas_path, local: true) do |form| %>
+      <%= form.text_field :name, placeholder: "カテゴリー" %>
+      <%= form.text_area :body, placeholder: "内容" %>
+      <%= form.submit "追加" %>
+    <% end %>
+  </div>
+</div>

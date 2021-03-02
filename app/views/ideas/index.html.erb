@@ -1,24 +1,17 @@
 <div>
   <% @ideas.each do |idea| %>
     <div>
-      <p><%=@categories.name%></p>
+      <%= form_for [@categories], url: ideas_path do |f| %>
+      <%= f.text_field :name %>
+      <%= f.text_field :body  %>
+      <% end %>
+      <p><%=@categories%></p>
       <span>
         <%= idea.body %>
       </span>
     </div>
   <% end %>
-      <div class="contents">
-      <div class="first-view">
-        <!-- 『トップ画像』を表示する -->
-      </div>
-      <div class="upper-content">
-        <!-- 『新着情報』を表示する -->
-      </div>
-      <div class="middle-content">
-        <!-- 『スタイリスト紹介』を表示する -->
-      </div>
-      <div class="bottom-content">
-        <!-- 『フォーム』を表示する -->
-      </div>
-    </div>
+</div>
+<div>
+  <%= link_to 'アイデア登録', new_idea_path%>
 </div>

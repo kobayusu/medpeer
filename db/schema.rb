@@ -22,4 +22,5 @@ ActiveRecord::Schema.define(version: 2021_03_01_120951) do
     t.index ["category_id"], name: "index_ideas_on_category_id"
   end
 
+  add_foreign_key "ideas", "categories"
 end
