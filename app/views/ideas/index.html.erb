@@ -1,5 +1,5 @@
 <%= search_form_for @p, url: ideas_search_path do |f| %>
-  <%= f.label :name_eq, 'idea' %>
+  <%= f.label :name_eq, 'カテゴリー検索' %>
   <%= f.collection_select :name_eq, @categories, :name, :name,  include_blank: '指定なし' %>
   <br>
   <%= f.submit '検索' %>
